@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -24,6 +24,11 @@
   },
   "name": "use-supercluster",
   "author": "Leigh Halliday",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leighhalliday/use-supercluster.git"
+  },
+  "homepage": "https://github.com/leighhalliday/use-supercluster",
   "module": "dist/use-supercluster.esm.js",
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
