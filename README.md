@@ -38,4 +38,4 @@ Full instructions and an [example can be found here](https://www.leighhalliday.c
 
 ### Leaflet
 
-Coming soon.
+Full instructions and an [example can be found here](https://www.leighhalliday.com/leaflet-clustering).
