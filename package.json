@@ -1,5 +1,5 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -29,6 +29,13 @@
     "url": "https://github.com/leighhalliday/use-supercluster.git"
   },
   "homepage": "https://github.com/leighhalliday/use-supercluster",
+  "keywords": [
+    "react",
+    "supercluster",
+    "clustering",
+    "maps",
+    "hook"
+  ],
   "module": "dist/use-supercluster.esm.js",
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
