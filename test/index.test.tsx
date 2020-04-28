@@ -3,7 +3,7 @@ import { BBox, GeoJsonProperties } from "geojson";
 import Supercluster from "supercluster";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import useSupercluster from "../";
+import useSupercluster from "../src";
 
 describe("useSupercluster", () => {
   it("renders clusters", async () => {
