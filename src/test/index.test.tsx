@@ -1,9 +1,9 @@
 import React from "react";
 import { BBox, GeoJsonProperties } from "geojson";
 import Supercluster from "supercluster";
-import { render, waitForElement } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import useSupercluster from "../src";
+import useSupercluster from "../";
 
 describe("useSupercluster", () => {
   it("renders clusters", async () => {
@@ -73,8 +73,8 @@ describe("useSupercluster", () => {
       );
     };
 
-    const { getByText } = render(<App />);
-    const clusterNode = await waitForElement(() => getByText("points: 4"));
+    const { findByText } = render(<App />);
+    const clusterNode = await findByText("points: 4");
     expect(clusterNode).toBeInTheDocument();
   });
 });
