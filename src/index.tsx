@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Supercluster from "supercluster";
 import { BBox, GeoJsonProperties } from "geojson";
 import { useDeepCompareEffectNoCheck } from "use-deep-compare-effect";
-import dequal from "dequal";
+import { dequal } from "dequal";
 
 export interface UseSuperclusterArgument<P, C> {
   points: Array<Supercluster.PointFeature<P>>;
