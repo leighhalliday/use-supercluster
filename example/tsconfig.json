@@ -11,9 +11,12 @@
     "removeComments": true,
     "strictNullChecks": true,
     "preserveConstEnums": true,
+    "strict": true,
     "sourceMap": true,
+    "allowJs": false,
     "lib": ["es2015", "es2016", "dom"],
     "baseUrl": ".",
-    "types": ["node"]
+    "types": ["node"],
+    "skipLibCheck": true
   }
 }
