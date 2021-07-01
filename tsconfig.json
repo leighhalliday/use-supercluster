@@ -27,6 +27,7 @@
     "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "allowJs": false
+    "allowJs": false,
+    "noEmit": true
   }
 }
