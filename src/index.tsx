@@ -30,7 +30,7 @@ const useSupercluster = <
   useDeepCompareEffectNoCheck(() => {
     if (!superclusterRef.current
       || !dequal(pointsRef.current, points)
-      || !dequal(superclusterRef.current.options, options)
+      || !dequal((superclusterRef.current as typeof superclusterRef.current & {options: typeof options}).options, options)
     ) {
       superclusterRef.current = new Supercluster(options);
       superclusterRef.current.load(points);
