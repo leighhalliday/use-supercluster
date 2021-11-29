@@ -38,7 +38,7 @@ const useSupercluster = <
     }
 
     pointsRef.current = points;
-  }, [points, bounds, zoomInt]);
+  }, [points, bounds, zoomInt, options]);
 
   return { clusters, supercluster: superclusterRef.current };
 };
