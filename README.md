@@ -1,6 +1,6 @@
 # useSupercluster
 
-A hook for using [Supercluster](https://github.com/mapbox/supercluster) with React.
+A hook for using Supercluster with React.
 
 ```js
 const { clusters, supercluster } = useSupercluster({
@@ -9,16 +9,16 @@ const { clusters, supercluster } = useSupercluster({
     -1.2411810957931664,
     52.61208435908725,
     -1.0083656811012531,
-    52.64495957533833,
+    52.64495957533833
   ],
   zoom: 12,
-  options: { radius: 75, maxZoom: 20 },
+  options: { radius: 75, maxZoom: 20 }
 });
 ```
 
 ## Installation
 
-You will need to install `supercluster` as a peer dependency of this package.
+You will need to install [Supercluster](https://github.com/mapbox/supercluster) as a peer dependency of this package.
 
 ```txt
 yarn add supercluster use-supercluster
@@ -52,17 +52,17 @@ As an example, you can use `map` and `reduce` to keep track of a total value sum
 const options = {
   radius: 75,
   maxZoom: 20,
-  map: (props) => ({
+  map: props => ({
     cost: props.cost,
     severity: props.severity,
-    count: 1,
+    count: 1
   }),
   reduce: (acc, props) => {
     acc.count += 1;
     acc.cost += props.cost;
     acc.severity = Math.max(acc.severity, props.severity);
     return acc;
-  },
+  }
 };
 ```
 
@@ -72,7 +72,7 @@ Then these accumulated properties can be used and are available on each cluster:
 
 ```jsx
 <ul>
-  {clusters.map((point) => {
+  {clusters.map(point => {
     const properties = point.properties || {};
     if (properties.cluster) {
       return (
