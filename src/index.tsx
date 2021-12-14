@@ -28,9 +28,15 @@ const useSupercluster = <
   const zoomInt = Math.round(zoom);
 
   useDeepCompareEffectNoCheck(() => {
-    if (!superclusterRef.current
-      || !dequal(pointsRef.current, points)
-      || !dequal((superclusterRef.current as typeof superclusterRef.current & {options: typeof options}).options, options)
+    if (
+      !superclusterRef.current ||
+      !dequal(pointsRef.current, points) ||
+      !dequal(
+        (superclusterRef.current as typeof superclusterRef.current & {
+          options: typeof options;
+        }).options,
+        options
+      )
     ) {
       superclusterRef.current = new Supercluster(options);
       superclusterRef.current.load(points);
