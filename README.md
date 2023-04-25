@@ -21,7 +21,7 @@ const { clusters, supercluster } = useSupercluster({
 You will need to install [Supercluster](https://github.com/mapbox/supercluster) as a peer dependency of this package.
 
 ```txt
-yarn add supercluster use-supercluster
+yarn add supercluster use-supercluster @types/supercluster @types/geojson
 ```
 
 ## Examples
