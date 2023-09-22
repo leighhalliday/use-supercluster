@@ -28,7 +28,7 @@ const useSupercluster = <
   const zoomInt = Math.round(zoom);
 
   useDeepCompareEffectNoCheck(() => {
-    if (options?.disableRefresh === false) {
+    if (options?.disableRefresh === true) {
       return;
     }
 
