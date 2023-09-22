@@ -8,7 +8,7 @@ export interface UseSuperclusterArgument<P, C> {
   points: Array<Supercluster.PointFeature<P>>;
   bounds?: BBox;
   zoom: number;
-  options?: Supercluster.Options<P, C> & { enabled?: boolean };
+  options?: Supercluster.Options<P, C> & { disableRefresh?: boolean };
 }
 
 const useSupercluster = <
@@ -28,7 +28,7 @@ const useSupercluster = <
   const zoomInt = Math.round(zoom);
 
   useDeepCompareEffectNoCheck(() => {
-    if (options?.enabled === false) {
+    if (options?.disableRefresh === false) {
       return;
     }
 
