@@ -42,7 +42,7 @@ Full instructions and an [example can be found here](https://www.leighhalliday.c
 
 ## Configuration
 
-The last (fourth) argument passed to the `useSupercluster` hook are options that are passed directly to the instance of Supercluster. You can use any of [Supercluster's options](https://github.com/mapbox/supercluster#options).
+The 'options' property passed to useSupercluster supports [Supercluster's options](https://github.com/mapbox/supercluster#options) and additionally includes support for the [disableRefresh](https://github.com/leighhalliday/use-supercluster#disableRefresh) option."
 
 ### Map & Reduce Options
 
@@ -88,4 +88,32 @@ Then these accumulated properties can be used and are available on each cluster:
     }
   })}
 </ul>
+```
+
+### disableRefresh
+
+Prevent clustering from occurring again when desired.
+
+For example, in [tanstack query](https://tanstack.com/query/latest), there is an option called [keepPreviousData](https://tanstack.com/query/v4/docs/react/guides/paginated-queries#better-paginated-queries-with-keeppreviousdata). with this option, clustering can occur while fetching data when map information has changed. you can prevent this clustering using `isFetching` and `disableRefresh`
+
+```JSX
+const Component = () => {
+  const { data, isFetching } = useQuery("markers", getMarkers(), {
+    keepPreviousData: true,
+  });
+
+  const { clusters, supercluster } = useSupercluster({
+    options: {
+      disableRefresh: isFetching
+    }
+  });
+
+  return (
+    <Map>
+      {clusters.map(cluster => {
+        return <Marker />;
+      })}
+    </Map>
+  );
+};
 ```
