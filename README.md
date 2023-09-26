@@ -92,20 +92,15 @@ Then these accumulated properties can be used and are available on each cluster:
 
 ### disableRefresh
 
-Prevent clustering from occurring again when desired.
-
-For example, in [tanstack query](https://tanstack.com/query/latest), there is an option called [keepPreviousData](https://tanstack.com/query/v4/docs/react/guides/paginated-queries#better-paginated-queries-with-keeppreviousdata). with this option, clustering can occur while fetching data when map information has changed. you can prevent this clustering using `isFetching` and `disableRefresh`
+With the `disableRefresh` option, `clusters` returned from `useSupercluster` will be based on previous data despite zoom/bounds/points having changed. For example, using `isFetching` from `useQuery`, we can set `disableRefresh` so that Supercluster doesn't perform clustering until we've successfully fetched new data.
 
 ```JSX
 const Component = () => {
-  const { data, isFetching } = useQuery("markers", getMarkers(), {
-    keepPreviousData: true,
-  });
+  const { data, isFetching } = useQuery("markers", getMarkers());
 
   const { clusters, supercluster } = useSupercluster({
-    options: {
-      disableRefresh: isFetching
-    }
+    /* ... normal options passed to hook ... */
+    disableRefresh: isFetching
   });
 
   return (
