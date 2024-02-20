@@ -36,6 +36,7 @@
     "maps",
     "hook"
   ],
+  "type": "module",
   "module": "dist/use-supercluster.esm.js",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.1",
